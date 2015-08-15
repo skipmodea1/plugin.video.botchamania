@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+
 ##############################################################################
 #
 # Botchamania - Addon for XBMC
@@ -17,8 +20,8 @@
 #
 #also in ..._const
 __addon__       = "plugin.video.botchamania"
-__date__        = "25 oktober 2014"
-__version__     = "1.1.0"
+__date__        = "15 august 2015"
+__version__     = "1.1.1"
 
 #
 # Imports

@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+
 #
 # Imports
 #
@@ -98,6 +101,8 @@ class Main:
  				title = title.encode('utf-8')	
 			except KeyError:
  	 			pass
+ 	 		except UnicodeDecodeError:
+	 			pass
  	 		
  			title = title.replace('-',' ')
  			title = title.replace('/',' ')
