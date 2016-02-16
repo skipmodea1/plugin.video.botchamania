@@ -7,10 +7,10 @@ import xbmcaddon
 #
 # Constants
 # 
-__addon__       = "plugin.video.botchamania"
-__settings__    = xbmcaddon.Addon(id=__addon__ )
-__language__    = __settings__.getLocalizedString
-__images_path__ = os.path.join( xbmcaddon.Addon(id=__addon__).getAddonInfo('path'), 'resources', 'images' )
-__addon__       = "plugin.video.botchamania"
-__date__        = "15 august 2015"
-__version__     = "1.1.1"
+ADDON = "plugin.video.botchamania"
+SETTINGS = xbmcaddon.Addon(id=ADDON)
+LANGUAGE = SETTINGS.getLocalizedString
+IMAGES_PATH = os.path.join(xbmcaddon.Addon(id=ADDON).getAddonInfo('path'), 'resources', 'images')
+DATE = "2016-02-13"
+VERSION = "1.1.2"
+
