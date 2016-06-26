@@ -150,3 +150,11 @@ msgstr "Fout bij het afspelen van video."
 msgctxt "#30507"
 msgid "Error getting page: %s"
 msgstr "Fout bij ophalen van pagina %s"
+
+msgctxt "#30508"
+msgid "Choose a video"
+msgstr "Kies een video"
+
+msgctxt "#30509"
+msgid "Video "
+msgstr "Video "

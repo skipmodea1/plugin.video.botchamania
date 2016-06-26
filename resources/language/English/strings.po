@@ -150,3 +150,11 @@ msgstr ""
 msgctxt "#30507"
 msgid "Error getting page: %s"
 msgstr ""
+
+msgctxt "#30508"
+msgid "Choose a video"
+msgstr ""
+
+msgctxt "#30509"
+msgid "Video "
+msgstr ""

@@ -146,9 +146,23 @@ class Main:
                     except:
                         unplayable_media_file = True
                 else:
-                    # Skipping the first video as this one usually isn't working
-                    video_urls_index = video_urls_index + 1
-                    video_url = video_urls[video_urls_index]['src']
+                    # Let the user choose a video
+                    video_nr = 0
+                    video_urls_list = []
+                    video_urls_title_list = []
+                    for vid in video_urls:
+                        video_nr += 1
+                        video_urls_list.append(vid)
+                        video_urls_title_list.append(LANGUAGE(30509) + str(video_nr))
+
+                    result = xbmcgui.Dialog().select(LANGUAGE(30508), video_urls_title_list)
+                    if result == -1:
+                        # Let's choose the second video
+                        video_urls_index = video_urls_index + 1
+                        video_url = video_urls[video_urls_index]['src']
+                    else:
+                        video_url = video_urls_list[result]['src']
+
                     # eventually fix video-url
                     video_url = str(video_url)
                     if video_url.startswith("http"):
