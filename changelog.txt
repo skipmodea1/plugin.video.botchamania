@@ -1,3 +1,6 @@
+v1.1.6-SNAPSHOT (2017-06-28)
+- removed looking for video dialogue
+
 v1.1.5 (2017-03-03):
 - fixed url in addon.xml as per request
 
