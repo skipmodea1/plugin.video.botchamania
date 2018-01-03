@@ -1,5 +1,7 @@
-v1.1.6-SNAPSHOT (2017-06-28)
+v1.1.6-SNAPSHOT (2017-12-25)
 - removed looking for video dialogue
+- addon now works in kode python 2 and also 3 (!!) thanks to the future project
+- addon.xml contains NOT YET SUPPORTED python3 tag
 
 v1.1.5 (2017-03-03):
 - fixed url in addon.xml as per request

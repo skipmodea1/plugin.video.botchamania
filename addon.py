@@ -4,15 +4,16 @@
 #
 # Imports
 #
+# the YDStreamExtractor needs to be before the future imports. Otherwise u get an 'check hostname' error.
+import YDStreamExtractor
+from future import standard_library
+standard_library.install_aliases()
+from builtins import str
 import os
-import re
 import sys
-import urllib
-import urlparse
+import urllib.parse
 import xbmc
 import xbmcaddon
-import xbmcgui
-import xbmcplugin
 
 LIB_DIR = xbmc.translatePath( os.path.join( xbmcaddon.Addon(id='plugin.video.botchamania').getAddonInfo('path'), 'resources', 'lib' ) )
 sys.path.append (LIB_DIR)
@@ -28,7 +29,7 @@ if len(sys.argv[2]) == 0:
     xbmc.log( "[ADDON] %s v%s (%s) is starting, ARGV = %s" % ( ADDON, VERSION, DATE, repr(sys.argv) ), xbmc.LOGDEBUG )
     import botchamania_main as plugin
 else:
-    action = urlparse.parse_qs(urlparse.urlparse(sys.argv[2]).query)['action'][0]
+    action = urllib.parse.parse_qs(urllib.parse.urlparse(sys.argv[2]).query)['action'][0]
     #
     # archive
     #
