@@ -82,16 +82,16 @@ class Main(object):
             #
             try:
                 response = requests.get(self.video_page_url)
-            except:
+            except urllib.error.HTTPError as error:
 
-                log("first HTTPError, error")
+                log("first HTTPError", error)
 
                 # Retry to (hopefully) get rid of a time-out http error
                 try:
                     response = requests.get(self.video_page_url)
-                except:
+                except urllib.error.HTTPError as error:
 
-                    log("second HTTPError, error")
+                    log("second HTTPError", error)
 
                     dialog_wait.close()
                     del dialog_wait
