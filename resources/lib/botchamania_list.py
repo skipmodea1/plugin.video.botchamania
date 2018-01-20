@@ -12,7 +12,6 @@ import os
 import requests
 import sys
 import urllib.request, urllib.parse, urllib.error
-import urllib.parse
 import xbmcgui
 import xbmcplugin
 
@@ -36,9 +35,14 @@ class Main(object):
         log("ARGV", repr(sys.argv))
 
         # Parse parameters
-        self.plugin_category = urllib.parse.parse_qs(urllib.parse.urlparse(sys.argv[2]).query)['plugin_category'][0]
-        self.video_list_page_url = urllib.parse.parse_qs(urllib.parse.urlparse(sys.argv[2]).query)['url'][0]
-        self.next_page_possible = urllib.parse.parse_qs(urllib.parse.urlparse(sys.argv[2]).query)['next_page_possible'][0]
+        try:
+            self.plugin_category = urllib.parse.parse_qs(urllib.parse.urlparse(sys.argv[2]).query)['plugin_category'][0]
+            self.video_list_page_url = urllib.parse.parse_qs(urllib.parse.urlparse(sys.argv[2]).query)['url'][0]
+            self.next_page_possible = urllib.parse.parse_qs(urllib.parse.urlparse(sys.argv[2]).query)['next_page_possible'][0]
+        except KeyError:
+            self.plugin_category = LANGUAGE(30001)
+            self.video_list_page_url = "http://botchamania.com/category/botchamania/"
+            self.next_page_possible = "False"
 
         log("self.video_list_page_url", self.video_list_page_url)
 

@@ -1,11 +1,9 @@
-# #!/usr/bin/env python
-# # -*- coding: UTF-8 -*-
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
 
 #
 # Imports
 #
-# the YDStreamExtractor needs to be before the future imports. Otherwise u get an 'check hostname' error.
-import YDStreamExtractor
 from future import standard_library
 standard_library.install_aliases()
 from builtins import str
@@ -27,7 +25,11 @@ if len(sys.argv[2]) == 0:
     #
     xbmc.log("[ADDON] %s, Python Version %s" % (ADDON, str(sys.version)), xbmc.LOGDEBUG)
     xbmc.log( "[ADDON] %s v%s (%s) is starting, ARGV = %s" % ( ADDON, VERSION, DATE, repr(sys.argv) ), xbmc.LOGDEBUG )
-    import botchamania_main as plugin
+
+    if SETTINGS.getSetting('onlyshowbotchamaniacategory') == 'true':
+        import botchamania_list as plugin
+    else:
+        import botchamania_main as plugin
 else:
     action = urllib.parse.parse_qs(urllib.parse.urlparse(sys.argv[2]).query)['action'][0]
     #
