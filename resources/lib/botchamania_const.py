@@ -14,8 +14,8 @@ ADDON = "plugin.video.botchamania"
 SETTINGS = xbmcaddon.Addon(id=ADDON)
 LANGUAGE = SETTINGS.getLocalizedString
 IMAGES_PATH = os.path.join(xbmcaddon.Addon(id=ADDON).getAddonInfo('path'), 'resources', 'images')
-DATE = "2018-02-24"
-VERSION = "1.1.8-SNAPSHOT"
+DATE = "2018-08-12"
+VERSION = "1.1.8"
 
 
 if sys.version_info[0] > 2:
